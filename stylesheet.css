@@ -1,43 +1,47 @@
-/* ====== 全体の設定 ====== */
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  font-family: "Hiragino Kaku Gothic ProN"; /* フォントの指定 */
+  font-family: "Hiragino Kaku Gothic ProN", sans-serif;
 }
 
 a {
-  text-decoration: none; /* リンクの下線を削除 */
+  text-decoration: none;
 }
 
-/* ====== レイアウト調整用コンテナ ====== */
+.clear {
+  clear: left;
+}
+
 .container {
-  width: 1170px; /* 固定幅 */
-  padding: 0 15px; /* 左右の余白 */
-  margin: 0 auto; /* 中央寄せ */
+  max-width: 1170px;
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
 }
 
-/* ====== トップセクションのデザイン ====== */
 .top-wrapper {
-  padding: 180px 0 100px 0; /* 上下の余白 */
-  background-image: url(https://prog-8.com/images/html/advanced/top.png); /* 背景画像 */
-  background-size: cover; /* 背景をカバー */
-  color: white; /* 文字色を白に */
-  text-align: center; /* テキストを中央揃え */
+  padding: 180px 0 100px 0;
+  background-image: url(https://prog-8.com/images/html/advanced/top.png);
+  background-size: cover;
+  color: white;
+  text-align: center;
 }
 
-/* トップセクションの見出し */
 .top-wrapper h1 {
-  opacity: 0.7; /* 透明度を調整 */
+  opacity: 0.7;
   font-size: 45px;
-  letter-spacing: 5px; /* 文字間隔 */
+  letter-spacing: 5px;
 }
 
-/* トップセクションの説明文 */
 .top-wrapper p {
   opacity: 0.7;
 }
 
-/* ====== ボタンのスタイル ====== */
 .btn-wrapper {
+  text-align: center;
   margin: 20px 0;
 }
 
@@ -45,7 +49,6 @@ a {
   margin: 10px 0;
 }
 
-/* 各種ボタンの色設定 */
 .signup {
   background-color: #239b76;
 }
@@ -59,156 +62,144 @@ a {
   background-color: #55acee;
 }
 
-/* ボタンの共通スタイル */
 .btn {
   padding: 8px 24px;
   color: white;
   display: inline-block;
   opacity: 0.8;
-  border-radius: 4px; /* 角を丸く */
+  border-radius: 4px;
+  text-align: center;
 }
 
-/* ボタンのホバーエフェクト */
 .btn:hover {
   opacity: 1;
 }
 
-/* アイコンの右側に余白 */
 .fa {
   margin-right: 5px;
 }
 
-/* ====== ヘッダーのデザイン ====== */
 header {
   height: 65px;
   width: 100%;
-  background-color: rgba(34, 49, 52, 0.9); /* 背景色を半透明に */
-  
-  /* ヘッダーを固定 */
-  position: fixed;
+  background-color: rgba(34, 49, 52, 0.9);
+  position :fixed;
   top: 0;
-  
-  /* 他の要素より前面に表示 */
   z-index: 10;
 }
 
-/* ロゴのスタイル */
 .logo {
   width: 124px;
   margin-top: 20px;
 }
 
-/* ヘッダー左側（ロゴ用） */
 .header-left {
   float: left;
 }
 
-/* ヘッダー右側（ログインボタン） */
 .header-right {
   float: right;
-  background-color: rgba(255, 255, 255, 0.3); /* 半透明の背景 */
-  transition: all 0.5s; /* なめらかな変化 */
+  margin-right: -25px;
 }
 
-/* ログインボタンのホバー時のエフェクト */
-.header-right:hover {
-  background-color: rgba(255, 255, 255, 0.5);
-}
-
-/* ヘッダー内のリンクスタイル */
 .header-right a {
   line-height: 65px;
   padding: 0 25px;
   color: white;
   display: block;
+  float: left;
+  transition: all 0.5s;
 }
 
-/* ====== レッスン一覧のスタイル ====== */
+.header-right a:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* menu-iconのCSSを貼り付けてください */
+.menu-icon {
+  color: white;
+  float: right;
+  font-size: 25px;
+  padding: 21px 0;
+  /* displayをnoneに指定してください */
+  display: none;
+}
+
+
 .lesson-wrapper {
-  height: 500px;
   padding-bottom: 80px;
+  padding-left: 5%;
+  padding-right: 5%;
   background-color: #f7f7f7;
-  text-align: center; /* テキスト中央揃え */
+  text-align: center;
 }
 
-/* レッスンセクションの見出し */
 .heading {
-  padding-top: 60px;
-  padding-bottom: 30px;
-  color: #5f5d60; /* 文字色を落ち着いた色に */
+  padding-top: 80px;
+  padding-bottom: 50px;
+  color: #5f5d60;
 }
 
-/* 見出しのスタイル */
 .heading h2 {
   font-weight: normal;
 }
 
-/* レッスンを横並びに配置 */
 .lesson {
   float: left;
   width: 25%;
 }
 
-/* レッスンアイコンのスタイル */
 .lesson-icon {
   position: relative;
 }
 
-/* レッスンのタイトル（アイコン内） */
 .lesson-icon p {
   position: absolute;
-  top: 90px; /* 画像の上に配置 */
+  top: 44%;
   width: 100%;
   color: white;
 }
 
-/* レッスンの説明文 */
-.txt-contents {
+.text-contents {
   width: 80%;
   display: inline-block;
-  margin-top: 20px;
-  font-size: 12px;
-  color: #b3aeb5; /* グレー寄りの文字色 */
+  margin-top: 15px;
+  font-size: 13px;
+  color: #b3aeb5;
 }
 
-/* メッセージセクションの見出し */
 .heading h3 {
   font-weight: normal;
 }
 
-/* ====== メッセージセクション ====== */
 .message-wrapper {
-  border-bottom: 1px solid #eee; /* 下線を追加 */
+  border-bottom: 1px solid #eee;
   padding-bottom: 80px;
   text-align: center;
 }
 
-/* メッセージボタンのスタイル */
 .message {
   padding: 15px 40px;
   background-color: #5dca88;
-  box-shadow: 0 7px #1a7940; /* 影を追加 */
+  box-shadow: 0 7px #1a7940;
 }
 
-/* メッセージボタンをクリックしたときのエフェクト */
 .message:active {
   position: relative;
   top: 7px;
-  box-shadow: none; /* クリック時に影をなくす */
+  box-shadow: none;
 }
 
-/* ====== フッターのデザイン ====== */
-footer {
-  padding-top: 30px;
-}
-
-/* フッターのロゴ */
 footer img {
   width: 125px;
 }
 
-/* フッターの説明文 */
 footer p {
   color: #b3aeb5;
   font-size: 12px;
+}
+
+footer {
+  padding-top: 30px;
+  padding-bottom: 20px;
 }
